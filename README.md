@@ -9,9 +9,9 @@ npm install
 ```sh
 npm start
 ```
-### Building the repo in production mode
+### Building the repo 
 ```sh
-npm run build:prod 
+npm run build
 ```
 ### Checking lint
 ```sh
