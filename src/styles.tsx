@@ -15,6 +15,10 @@ export const GlobalStyle = createGlobalStyle`
     color: var(--text-dark);
   }
 
+  a {
+    color: var(--text-dark);
+  }
+
   div[class^="Snackbar_snackbar-wrapper"] {
     z-index: 1000;
   }
