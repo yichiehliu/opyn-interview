@@ -1,9 +1,8 @@
 import React from 'react'
-import { RouteComponentProps } from '@reach/router'
 
 import { Page, PageTitle, PageSubTitle } from '@components/Page'
 
-const NotFound: React.FC<RouteComponentProps> = () => {
+const NotFound: React.FC = () => {
   return (
     <>
       <Page>

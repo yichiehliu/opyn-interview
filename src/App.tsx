@@ -1,7 +1,8 @@
 import React from 'react'
 import { Web3ReactProvider, createWeb3ReactRoot } from '@web3-react/core'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
 import { GlobalStyle } from './styles'
-import { Router } from '@reach/router'
 
 import Home from '@pages/Home'
 import NotFound from '@pages/NotFound'
@@ -15,9 +16,15 @@ const App: React.FC = () => (
   <Web3ReactProvider getLibrary={getLibrary}>
     <Web3ProviderNetwork getLibrary={getLibrary}>
       <GlobalStyle />
-      <Router primary={false}>
-        <NotFound path="/not-found" default />
-        <Home path="/" />
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
+        </Switch>
       </Router>
     </Web3ProviderNetwork>
   </Web3ReactProvider>

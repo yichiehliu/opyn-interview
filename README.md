@@ -25,7 +25,7 @@ npm run lint
 1. CSS: styled-components, polished
 2. Wallet connection: web3-react, ethers.js
 3. Wallet connection RPC: alchemy api
-4. Router: Reach router
+4. Router: React router dom 
 5. Configuration: Babel, Webpack, Typescript, Prettier, Eslint
 
 ### Directories

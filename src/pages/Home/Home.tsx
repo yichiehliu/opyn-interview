@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { RouteComponentProps } from '@reach/router'
 
-import { Page, PageContent, PageTitle } from '@components/Page'
+import { Page, PageContent, PageSubTitle, PageTitle } from '@components/Page'
 import { OrderSideBar } from './OrderSideBar'
 
 import { Account, Balance, ErrorMsg } from '@libs/connectWallet'
@@ -13,7 +12,7 @@ const initialState: OrderDataType = {
   currentStep: 1,
 }
 
-export const Home: React.FC<RouteComponentProps> = () => {
+export const Home: React.FC = () => {
   const [order, setOrder] = useState<OrderDataType>(initialState)
   const [loading, setLoading] = useState(false)
 
@@ -26,8 +25,8 @@ export const Home: React.FC<RouteComponentProps> = () => {
   return (
     <>
       <Page>
-        <PageTitle>Metamask Connection</PageTitle>
         <PageContent>
+          <h1>Metamask Connection</h1>
           <div>
             Wallet Address: <Account />
           </div>
