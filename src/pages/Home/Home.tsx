@@ -22,7 +22,7 @@ export const Home: React.FC = () => {
     setOrder(prevState => {
       return { ...prevState, currentStep: 1 }
     })
-  }, [order.orderType, order.priceType, setOrder])
+  }, [order.orderType, order.priceType, setOrder, disabled])
 
   return (
     <>
@@ -43,9 +43,15 @@ export const Home: React.FC = () => {
           <br />
           <div>
             <h2>To see other three order flows: buy-market, buy-limit, sell-limit</h2>
-            <SwitchButton isDisabled={disabled} onClick={() => setDisabled(!disabled)}>
-              Enable / Disable
-            </SwitchButton>
+            <div>Stay at other three tx flows, the button will show up</div>
+            <br />
+            {order.orderType === OrderType.SELL && order.priceType === PricerType.MARKET ? (
+              <></>
+            ) : (
+              <SwitchButton isDisabled={disabled} onClick={() => setDisabled(!disabled)}>
+                {disabled ? 'To Enable' : 'To Disable'}
+              </SwitchButton>
+            )}
           </div>
         </PageContent>
       </Page>
