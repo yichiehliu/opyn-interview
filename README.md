@@ -42,7 +42,9 @@ To go through the repo, you can start from App.tsx -> pages/Home -> OrderSideBar
    8. Slider
    9. SideBar
    10. Tab
-   11. Wallet: There are Intall Metamask / Wallet Error / Connect to Metamask status
+   11. Wallet
+       1.  There are Intall Metamask / Wallet Error / Connect to Metamask status
+       2.  If webpage is already connected to Metamask, it will jump to second step automatically.
  
 2. Connectors / Constants: constants, settings for wallet connection
 3. Data: tx and action button descriptions for each tx step 
