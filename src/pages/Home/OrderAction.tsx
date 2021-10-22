@@ -25,6 +25,7 @@ export const OrderAction: React.FC<OrderActionProps> = ({
   let next = order.currentStep + 1
   const curernStepIndex = order.currentStep - 1
 
+  // fake loading function
   const fakeLoading = async () => {
     setLoading(true)
     return new Promise<void>(resolve => {

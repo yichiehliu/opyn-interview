@@ -31,12 +31,15 @@ export const OrderSideBar: React.FC<OrderSideBarProps> = ({
           <InfoSvg />
         </OrderCardTitle>
         <Card>
+          {/* Option Info & Order type */}
           <OptionInfoCard order={order} setOrder={setOrder} />
         </Card>
         <Card style={{ padding: '0' }}>
+          {/* Martket and Limit Tab */}
           <MarketLimitTabs order={order} setOrder={setOrder} />
         </Card>
       </OrderCard>
+      {/* Approve / Connect Button */}
       <OrderActionCard>
         <Wallet setOrder={setOrder} loading={loading} setLoading={setLoading}>
           <OrderAction

@@ -29,6 +29,7 @@ npm run lint
 5. Configuration: Babel, Webpack, Typescript, Prettier, Eslint
 
 ### Directories
+To go through the repo, you can start from App.tsx -> pages/Home -> OrderSideBar Component -> Option Info Card / Marlet & Limit Tab / Order Action Button.
 
 1. Components: 
    1. Button
