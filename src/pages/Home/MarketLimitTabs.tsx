@@ -8,7 +8,7 @@ import {
   buyMarketStepData,
   buyLimitStepData,
 } from '@data/index'
-import { OrderDataType } from '../../types'
+import { OrderDataType, OrderType, PricerType } from '../../types'
 
 interface MarketLimitTabsProps {
   order: OrderDataType
@@ -17,16 +17,16 @@ interface MarketLimitTabsProps {
 
 export const MarketLimitTabs: React.FC<MarketLimitTabsProps> = ({ order, setOrder }) => {
   return (
-    <Tabs initialSelectedTab={order.priceType === 'market' ? 0 : 1}>
+    <Tabs initialSelectedTab={order.priceType === PricerType.MARKET ? 0 : 1}>
       <TabContent
         title="Market"
         onClick={() =>
           setOrder(prevOrder => {
-            return { ...prevOrder, priceType: 'market' }
+            return { ...prevOrder, priceType: PricerType.MARKET }
           })
         }
       >
-        {order.orderType === 'sell' ? (
+        {order.orderType === OrderType.SELL ? (
           <SellMarketOrder currentStep={order.currentStep} steps={sellMarketStepData} />
         ) : (
           <BuyMarketOrder currentStep={order.currentStep} steps={buyMarketStepData} />
@@ -36,11 +36,11 @@ export const MarketLimitTabs: React.FC<MarketLimitTabsProps> = ({ order, setOrde
         title="Limit"
         onClick={() => {
           setOrder(prevOrder => {
-            return { ...prevOrder, priceType: 'limit' }
+            return { ...prevOrder, priceType: PricerType.LIMIT }
           })
         }}
       >
-        {order.orderType === 'sell' ? (
+        {order.orderType === OrderType.SELL ? (
           <SellLimitOrder currentStep={order.currentStep} steps={sellLimitStepData} />
         ) : (
           <BuyLimitOrder currentStep={order.currentStep} steps={buyLimitStepData} />

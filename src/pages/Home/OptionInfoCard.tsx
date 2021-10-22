@@ -1,16 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import {
-  SellButton,
-  BuyButton,
-  ConnectButton,
-  ApproveButton,
-  OrderLinkButton,
-  Button,
-} from '@components/Button'
+import { SellButton, BuyButton } from '@components/Button'
 import { ReactComponent as ArrowSvg } from '@images/mutual-arrow.svg'
 import { ReactComponent as InfoSvg } from '@images/info.svg'
-import { OrderDataType } from '../../types'
+import { OrderDataType, OrderType } from '../../types'
 
 interface OptionInfoCardProps {
   order: OrderDataType
@@ -22,20 +15,20 @@ export const OptionInfoCard: React.FC<OptionInfoCardProps> = ({ order, setOrder 
     <>
       <OptionType>
         <BuyButton
-          active={order?.orderType === 'buy'}
+          active={order?.orderType === OrderType.BUY}
           onClick={() =>
             setOrder(prevOrder => {
-              return { ...prevOrder, orderType: 'buy' }
+              return { ...prevOrder, orderType: OrderType.BUY }
             })
           }
         >
           BUY
         </BuyButton>
         <SellButton
-          active={order?.orderType === 'sell'}
+          active={order?.orderType === OrderType.SELL}
           onClick={() =>
             setOrder(prevOrder => {
-              return { ...prevOrder, orderType: 'sell' }
+              return { ...prevOrder, orderType: OrderType.SELL }
             })
           }
         >

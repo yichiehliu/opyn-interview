@@ -11,6 +11,7 @@ import { ReactComponent as InfoSvg } from '@images/info.svg'
 import { OrderDataType } from '../../types'
 
 interface OrderSideBarProps {
+  disabled: boolean
   loading: boolean
   setLoading: (loading: boolean) => void
   order: OrderDataType
@@ -18,6 +19,7 @@ interface OrderSideBarProps {
 }
 
 export const OrderSideBar: React.FC<OrderSideBarProps> = ({
+  disabled,
   order,
   setOrder,
   loading,
@@ -43,6 +45,7 @@ export const OrderSideBar: React.FC<OrderSideBarProps> = ({
       <OrderActionCard>
         <Wallet setOrder={setOrder} loading={loading} setLoading={setLoading}>
           <OrderAction
+            disabled={disabled}
             order={order}
             setOrder={setOrder}
             loading={loading}

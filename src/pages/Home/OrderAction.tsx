@@ -7,9 +7,10 @@ import {
   buyMarketStepData,
   buyLimitStepData,
 } from '@data/index'
-import { OrderDataType } from '../../types'
+import { OrderDataType, OrderType, PricerType } from '../../types'
 
 interface OrderActionProps {
+  disabled: boolean
   loading: boolean
   setLoading: (loading: boolean) => void
   order: OrderDataType
@@ -17,6 +18,7 @@ interface OrderActionProps {
 }
 
 export const OrderAction: React.FC<OrderActionProps> = ({
+  disabled,
   order,
   setOrder,
   loading,
@@ -36,30 +38,40 @@ export const OrderAction: React.FC<OrderActionProps> = ({
     })
   }
 
-  // if want to test other three types of tx flow just remove the disabled and change the onlick the isloading as Market Sell Button
-  if (order.orderType === 'sell' && order.priceType === 'limit') {
+  const setNextStep = async () => {
+    await fakeLoading()
+    setOrder(prevOrder => {
+      return { ...prevOrder, currentStep: next }
+    })
+  }
+
+  if (order.orderType === OrderType.SELL && order.priceType === PricerType.LIMIT) {
     if (order.currentStep === sellLimitStepData.length) next = 1
-    return <ApproveButton disabled>{sellLimitStepData[curernStepIndex].buttonDesc}</ApproveButton>
-  } else if (order.orderType === 'sell' && order.priceType === 'market') {
+    return (
+      <ApproveButton disabled={disabled} isLoading={loading} onClick={setNextStep}>
+        {sellLimitStepData[curernStepIndex].buttonDesc}
+      </ApproveButton>
+    )
+  } else if (order.orderType === OrderType.SELL && order.priceType === PricerType.MARKET) {
     if (order.currentStep === sellMarketStepData.length) next = 1
     return (
-      <ApproveButton
-        isLoading={loading}
-        onClick={async () => {
-          await fakeLoading()
-          setOrder(prevOrder => {
-            return { ...prevOrder, currentStep: next }
-          })
-        }}
-      >
+      <ApproveButton isLoading={loading} onClick={setNextStep}>
         {sellMarketStepData[curernStepIndex].buttonDesc}
       </ApproveButton>
     )
-  } else if (order.orderType === 'buy' && order.priceType === 'market') {
+  } else if (order.orderType === OrderType.BUY && order.priceType === PricerType.MARKET) {
     if (order.currentStep === buyMarketStepData.length) next = 1
-    return <ApproveButton disabled>{buyMarketStepData[curernStepIndex].buttonDesc}</ApproveButton>
+    return (
+      <ApproveButton disabled={disabled} isLoading={loading} onClick={setNextStep}>
+        {buyMarketStepData[curernStepIndex].buttonDesc}
+      </ApproveButton>
+    )
   } else {
     if (order.currentStep === buyLimitStepData.length) next = 1
-    return <ApproveButton disabled>{buyLimitStepData[curernStepIndex].buttonDesc}</ApproveButton>
+    return (
+      <ApproveButton disabled={disabled} isLoading={loading} onClick={setNextStep}>
+        {buyLimitStepData[curernStepIndex].buttonDesc}
+      </ApproveButton>
+    )
   }
 }
