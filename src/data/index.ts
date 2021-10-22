@@ -1,4 +1,4 @@
-import { StepDataType } from '../types'
+import { StepDataType, StepIconType } from '../types'
 
 export const opt = [
   { value: 'seconds', label: 'seconds' },
@@ -8,39 +8,51 @@ export const opt = [
 ]
 
 export const sellMarketStepData: StepDataType = [
-  { desc: 'Enable WETH Wrapper', icon: 'toggle', buttonDesc: 'ENABLE WETH WRAPPER' },
+  { desc: 'Enable WETH Wrapper', icon: StepIconType.TOGGLE, buttonDesc: 'ENABLE WETH WRAPPER' },
   {
     desc: 'Approve collateral to Opyn Contracts',
-    icon: 'toggle',
+    icon: StepIconType.TOGGLE,
     buttonDesc: 'APPROVE COLLATERAL',
   },
-  { desc: 'Permit oToken to wrapper contracts', icon: 'toggle', buttonDesc: 'PERMIT OTOKEN' },
-  { desc: 'Permit, deposit, mint & trade', icon: 'check', buttonDesc: 'SUBMIT TRADE' },
+  {
+    desc: 'Permit oToken to wrapper contracts',
+    icon: StepIconType.TOGGLE,
+    buttonDesc: 'PERMIT OTOKEN',
+  },
+  { desc: 'Permit, deposit, mint & trade', icon: StepIconType.CHECK, buttonDesc: 'SUBMIT TRADE' },
 ]
 
 export const sellLimitStepData: StepDataType = [
-  { desc: 'Enable WETH Wrapper', icon: 'toggle', buttonDesc: 'ENABLE WETH WRAPPER' },
+  { desc: 'Enable WETH Wrapper', icon: StepIconType.TOGGLE, buttonDesc: 'ENABLE WETH WRAPPER' },
   {
     desc: 'Approve collateral to Opyn contracts',
-    icon: 'toggle',
-    buttonDesc: 'Approve collateral',
+    icon: StepIconType.TOGGLE,
+    buttonDesc: 'APPROVE COLLATERAL',
   },
-  { desc: 'Deposit collateral and mint oTokens', icon: 'check', buttonDesc: 'DEPOSIT COLLATERAL' },
-  { desc: 'Approve oToken to 0x trading contract', icon: 'toggle', buttonDesc: 'APPROVE OTOKEN' },
-  { desc: 'Place Sell limit order', icon: 'check', buttonDesc: 'SUBMIT TRADE' },
+  {
+    desc: 'Deposit collateral and mint oTokens',
+    icon: StepIconType.CHECK,
+    buttonDesc: 'DEPOSIT COLLATERAL',
+  },
+  {
+    desc: 'Approve oToken to 0x trading contract',
+    icon: StepIconType.TOGGLE,
+    buttonDesc: 'APPROVE OTOKEN',
+  },
+  { desc: 'Place Sell limit order', icon: StepIconType.CHECK, buttonDesc: 'SUBMIT TRADE' },
 ]
 
 export const buyLimitStepData: StepDataType = [
   {
     desc: 'Approve USDC to 0x trading contract',
-    icon: 'toggle',
+    icon: StepIconType.TOGGLE,
     buttonDesc: 'APPROVE USDC TO 0x',
   },
-  { desc: 'Place limit, buy order', icon: 'check', buttonDesc: 'SUBMIT TRADE' },
+  { desc: 'Place limit, buy order', icon: StepIconType.CHECK, buttonDesc: 'SUBMIT TRADE' },
 ]
 
 export const buyMarketStepData: StepDataType = [
-  { desc: 'Enable WETH Wrapper', icon: 'toggle', buttonDesc: 'ENABLE WETH WRAPPER' },
-  { desc: 'Sign USDC to Wrapper Contract', icon: 'toggle', buttonDesc: 'SIGN USDC' },
-  { desc: 'Permit & Buy oToken', icon: 'check', buttonDesc: 'SUBMIT TRADE' },
+  { desc: 'Enable WETH Wrapper', icon: StepIconType.TOGGLE, buttonDesc: 'ENABLE WETH WRAPPER' },
+  { desc: 'Sign USDC to Wrapper Contract', icon: StepIconType.TOGGLE, buttonDesc: 'SIGN USDC' },
+  { desc: 'Permit & Buy oToken', icon: StepIconType.CHECK, buttonDesc: 'SUBMIT TRADE' },
 ]

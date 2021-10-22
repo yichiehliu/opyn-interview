@@ -6,7 +6,7 @@ import { ReactComponent as InfoSvg } from '@images/info.svg'
 import { ReactComponent as ToggleSvg } from '@images/toggle-small.svg'
 import { ReactComponent as CheckSvg } from '@images/check-circle.svg'
 
-import { StepDataType } from '../../types'
+import { StepDataType, StepIconType } from '../../types'
 
 interface TxActionCardProps {
   currentStep: number
@@ -25,8 +25,8 @@ export const TxActionCard: React.FC<TxActionCardProps> = ({
       {Array.from({ length: totalSteps }, (v, index) => {
         return (
           <TxActionItem key={'item' + index} currentStep={currentStep} currentIndex={index + 1}>
-            {steps[index].icon === 'check' && <CheckSvg />}
-            {steps[index].icon === 'toggle' && <ToggleSvg />}
+            {steps[index].icon === StepIconType.CHECK && <CheckSvg />}
+            {steps[index].icon === StepIconType.TOGGLE && <ToggleSvg />}
             <span>{index + 1 + '. ' + steps[index].desc}</span>
             <InfoSvg />
           </TxActionItem>
