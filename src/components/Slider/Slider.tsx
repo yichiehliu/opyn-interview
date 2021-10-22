@@ -19,7 +19,7 @@ export const Slider: React.FC<SliderProps> = ({
   value,
   onChange,
   barHeight = 4,
-  thumbHeight = 14,
+  thumbHeight = 16,
   thumbWidth = 3,
   reminderValue = 75,
   min = 0,
@@ -87,7 +87,7 @@ const ReminderLabel = styled.span<{
   transform: translateY(-50%);
 
   background-color: var(--green);
-  border-radius: 4px;
+  border-radius: 16px;
   outline: 1px solid #ffffff;
 
   @supports (-moz-appearance: none) {
@@ -137,7 +137,7 @@ const RangeInput = styled.input<{
     height: ${({ thumbHeight }) => thumbHeight}px;
     width: ${({ thumbWidth }) => thumbWidth}px;
     background-color: var(--dark-grey);
-    border-radius: 4px;
+    border-radius: 16px;
 
     outline: 1px solid #ffffff;
     border: none;
@@ -154,7 +154,7 @@ const RangeInput = styled.input<{
     height: ${({ thumbHeight }) => thumbHeight}px;
     width: ${({ thumbWidth }) => thumbWidth}px;
     background-color: var(--dark-grey);
-    border-radius: 4px;
+    border-radius: 16px;
     border: none;
     outline: 1px solid #ffffff;
 
@@ -170,7 +170,7 @@ const RangeInput = styled.input<{
     height: ${({ thumbHeight }) => thumbHeight}px;
     width: ${({ thumbWidth }) => thumbWidth}px;
     background-color: var(--dark-grey);
-    border-radius: 4px;
+    border-radius: 16px;
     outline: 1px solid #ffffff;
 
     &:hover,
