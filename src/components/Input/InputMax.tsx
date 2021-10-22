@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { MaxButton } from '@components/Button'
 import { Input, InputGroup, InputElement } from '@components/Input'
@@ -6,12 +6,15 @@ import { Input, InputGroup, InputElement } from '@components/Input'
 interface InputMaxProps {
   topTitle?: string
   maxTitle?: string
+  maxValue?: number
 }
 
 export const InputMax: React.FC<InputMaxProps> = ({
   topTitle = 'oToken Balance',
   maxTitle = 'oTokens',
+  maxValue = 50,
 }) => {
+  const [value, setValue] = useState(0)
   return (
     <InputGroup>
       <InputMaxTopElement>
@@ -19,9 +22,9 @@ export const InputMax: React.FC<InputMaxProps> = ({
         <span>21.042</span>
       </InputMaxTopElement>
 
-      <StyledInputMax defaultValue="100.00" pr="100px" />
+      <StyledInputMax value={value} onChange={e => setValue((e.target as any).value)} pr="100px" />
       <InputMaxRightElement width="100px" direction="right">
-        <MaxButton>MAX</MaxButton>
+        <MaxButton onClick={() => setValue(maxValue)}>MAX</MaxButton>
         <span>{maxTitle}</span>
       </InputMaxRightElement>
     </InputGroup>
