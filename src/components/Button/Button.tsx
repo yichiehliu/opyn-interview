@@ -155,7 +155,8 @@ export const ConnectButton = styled(Button)`
   color: var(--white);
   font-weight: 500;
   box-shadow: 0px -4px 10px rgba(222, 222, 222, 0.5);
-  transition: all 0.6s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  text-transform: uppercase;
   &:hover {
     opacity: 0.8;
     box-shadow: rgb(0 0 0 / 20%) 0px 5px 5px -3px, rgb(0 0 0 / 14%) 0px 8px 10px 1px,
@@ -227,5 +228,16 @@ export const MaxButton = styled(Button)`
   &:active {
     transition-duration: 0.2s;
     transform: translateY(2px);
+  }
+`
+
+export const SwitchButton = styled(ApproveButton)<{ isDisabled: boolean }>`
+  background-color: ${({ isDisabled }) => (isDisabled ? 'var(--green)' : 'var(--red)')};
+  width: auto;
+
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    background-color: ${({ isDisabled }) => (isDisabled ? 'var(--green)' : 'var(--red)')};
   }
 `
