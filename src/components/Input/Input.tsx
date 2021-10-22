@@ -55,8 +55,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(function inp
 
 const disabledCss = css`
   background-color: var(--grey);
-  color: var(--text-subtle);
-  opacity: 0.6;
+  color: var(--text-dark);
+  opacity: 0.4;
 `
 
 const NativeInput = styled.input<InputProps>`

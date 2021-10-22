@@ -63,10 +63,9 @@ const TxSummary = styled.div`
 const TxSummaryItem = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 5px;
   margin-top: 22px;
   gap: 4px;
-  opacity: 0.6;
+  opacity: 0.5;
 `
 
 const Divider = styled.div`

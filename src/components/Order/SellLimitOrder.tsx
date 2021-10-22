@@ -27,7 +27,7 @@ export const SellLimitOrder: React.FC<SellLimitOrderProps> = ({ steps, currentSt
       <OrderInput>
         <InputInfoWrap>LIMIT PRICE</InputInfoWrap>
         <InputGroup>
-          <Input defaultValue="25" pr="55px" />
+          <Input defaultValue="100" pr="55px" />
           <InputElement width="55px" direction="right">
             USDC
           </InputElement>
