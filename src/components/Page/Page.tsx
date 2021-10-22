@@ -13,6 +13,7 @@ const Root = styled.div`
 
 export const PageTitle = styled.h1`
   margin: 8px 0 10px;
+  text-align: center;
   font-weight: bold;
   font-size: 32px;
   color: var(--text-dark);
@@ -20,4 +21,12 @@ export const PageTitle = styled.h1`
 
 export const PageContent = styled.div`
   margin-top: 30px;
+`
+
+export const PageSubTitle = styled.h2`
+  margin: 0;
+  text-align: center;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.5;
 `
