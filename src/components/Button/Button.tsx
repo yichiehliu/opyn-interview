@@ -209,10 +209,11 @@ export const OrderLinkButton = styled.a`
 
 export const MaxButton = styled(Button)`
   display: flex;
-  align-items: center;
+  padding-top: 3px;
 
   width: 38px;
-  height: 18px;
+  height: 19px;
+  font-weight: bold;
   border: 1px solid var(--blue);
   background-color: var(--white);
   color: var(--blue);
